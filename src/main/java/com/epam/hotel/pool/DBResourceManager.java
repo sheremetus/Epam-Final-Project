@@ -1,6 +1,5 @@
-package pool;
+package com.epam.hotel.pool;
 
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class DBResourceManager {

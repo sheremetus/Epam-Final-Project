@@ -1,14 +1,19 @@
-import pool.ConnectionPool;
-import pool.ConnectionPoolException;
+package com.epam.hotel;
 
-import java.sql.*;
+
+import com.epam.hotel.pool.ConnectionPool;
+import com.epam.hotel.pool.ConnectionPoolException;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class Main {
     public static void main(String[] args) throws ClassNotFoundException {
 
 
         Connection con = null;
-
         Statement st = null;
         ResultSet rs = null;
 

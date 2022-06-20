@@ -1,4 +1,5 @@
-package pool;
+package com.epam.hotel.pool;
+
 
 
 import java.sql.*;

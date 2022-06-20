@@ -1,4 +1,4 @@
-package pool;
+package com.epam.hotel.pool;
 
 public class ConnectionPoolException extends Exception {
     private static final long serialVersionUID = 1L;
