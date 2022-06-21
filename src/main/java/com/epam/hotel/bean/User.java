@@ -1,7 +1,5 @@
 package com.epam.hotel.bean;
 
-import jdk.javadoc.internal.doclets.formats.html.markup.Entity;
-
 import java.util.Objects;
 
 public class User {
