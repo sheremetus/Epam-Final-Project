@@ -4,6 +4,8 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+
+
     <servlet>
         <servlet-name>TestServlet</servlet-name>
         <servlet-class>com.epam.hotel.servlet.TestServlet</servlet-class>
@@ -11,20 +13,16 @@
 
     <servlet-mapping>
         <servlet-name>TestServlet</servlet-name>
-        <url-pattern>/test-servlet</url-pattern>
+        <url-pattern>/users</url-pattern>
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>firstJsp</servlet-name>
-        <jsp-file>/firstJsp.jsp</jsp-file>
+        <servlet-name>addUser</servlet-name>
+        <jsp-file>/addUser.jsp</jsp-file>
     </servlet>
-
     <servlet-mapping>
-        <servlet-name>firstJsp</servlet-name>
-        <url-pattern>/helloJSP</url-pattern>
+        <servlet-name>addUser</servlet-name>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
-
-
-
 
 </web-app>
