@@ -24,8 +24,10 @@ public class SessionServlet extends HttpServlet {
         String password = request.getParameter("password-in");
         User user;
         if ( (user = sqlUserDao.getUser(login, password)) != null) {
-
+            request.setAttribute("Login", login);
             getServletContext().getRequestDispatcher("/jsp/guestSession.jsp").forward(request,response);
+
+
         }
         else{
             pw.println("Please register!");

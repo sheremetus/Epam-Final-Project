@@ -21,13 +21,13 @@
         <nav class="clear">
             <ul>
                 <li><a href="#">Главная</a></li>
-                <li><a href="#">О нас</a></li>
-                <li><a href="#">Услуги</a></li>
-                <li><a href="#">Партнеры</a></li>
+                <li><a href="#">Личный кабинет</a></li>
+                <li><a href="#">Заказать комнату</a></li>
+                <li><a href="#">Оплата проживания</a></li>
                 <li><a href="#">Контакты</a></li>
             </ul>
         </nav>
-        <h1>Практическая верстка</h1>
+        <h1>Здравствуйте ! ${Login}  </h1>
     </header>
     <div class="content-wrapper">
         <!-- первая левая боковая панель берем все в тег aside-->
