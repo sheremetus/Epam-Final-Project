@@ -430,7 +430,9 @@ public class ConnectionPool {
 
         @Override
         public boolean isWrapperFor(Class<?> iface) throws SQLException {
+
             return connection.isWrapperFor(iface);
+
         }
     }
 }

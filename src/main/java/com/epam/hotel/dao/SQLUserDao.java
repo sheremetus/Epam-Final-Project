@@ -10,14 +10,14 @@ import java.util.Optional;
 
 public class SQLUserDao implements UserDao {
     private final ConnectionPool cp = new ConnectionPool();
+    Connection con = null;
+    PreparedStatement st = null;
 
+    ResultSet rs = null;
 
     @Override
-    public User authorization(String login, String password) throws DAOException {
+    public void authorization(String login, String password) throws DAOException {
 
-        Connection con = null;
-        PreparedStatement st = null;
-        ResultSet rs = null;
 
         try {
             cp.initPoolData();
@@ -29,16 +29,66 @@ public class SQLUserDao implements UserDao {
             st.setString(2, password);
             st.execute();
 
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
         } catch (ConnectionPoolException e) {
             e.printStackTrace();
         } finally {
             cp.closeConnection(con, st);
         }
 
-        return new User(login, password);
+
     }
+
+    @Override
+    public User getUser(int id) {
+        User user = null;
+        try {
+            cp.initPoolData();
+            con = cp.takeConnection();
+            st = con.prepareStatement("SELECT * FROM hotel_db.users WHERE id = ? ");
+            st.setInt(1, id);
+            ResultSet rs = st.executeQuery();
+            while(rs.next())
+            {
+                user = new User(rs.getString(2), rs.getString(3));
+            }
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
+        } catch (ConnectionPoolException e) {
+            e.printStackTrace();
+        } finally {
+            cp.closeConnection(con, st);
+
+        }
+        return user;
+    }
+
+    @Override
+    public User getUser(String login, String password) {
+        User user = null;
+        try {
+            cp.initPoolData();
+            con = cp.takeConnection();
+            st = con.prepareStatement("SELECT * FROM hotel_db.users WHERE login = ? AND password= ?");
+            st.setString(1, login);
+            st.setString(2, password);
+
+            ResultSet rs = st.executeQuery();
+            while(rs.next()) {
+                user = new User(rs.getString(2), rs.getString(3));
+            }
+        } catch (SQLException throwable) {
+            throwable.printStackTrace();
+        } catch (ConnectionPoolException e) {
+            e.printStackTrace();
+        } finally {
+            cp.closeConnection(con, st);
+
+        }
+        return user;
+    }
+
 
     @Override
     public Optional find(Integer id) {

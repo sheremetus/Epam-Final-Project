@@ -12,7 +12,7 @@
 <head>
     <title>Title</title>
     <style>
-        <%@include file='/css/registrationCss.css' %>
+        <%@include file='/css/registration.css' %>
     </style>
 </head>
 
@@ -21,14 +21,30 @@
     <h1>Please sign in or sign up!</h1>
     <form method="post" action="/users" class="subform">
         <p>
-            <label for="login">Login</label>
-            <input class="input-field" type="text" id="login" name="login"/>
+            <label for="login-up">Login</label>
+            <input class="input-field" type="text" id="login-up" name="login-up"/>
         </p>
         <p>
-            <label for="password">Password</label>
-            <input class="input-field" type="text" id="password" name="password"/>
+            <label for="password-up">Password</label>
+            <input class="input-field" type="text" id="password-up" name="password-up"/>
         </p>
-        <input type="submit" value="Sign up"/>
+        <input type="submit" value="Sign up" />
+    </form>
+
+    <br><br>
+
+
+    <form method="post" action="/session" class="subform">
+        <p>
+            <label for="login-in">Login</label>
+            <input class="input-field" type="text" id="login-in" name="login-in"/>
+        </p>
+        <p>
+            <label for="password-in">Password</label>
+            <input class="input-field" type="text" id="password-in" name="password-in"/>
+        </p>
+
+        <input type="submit" value="Sign in"/>
     </form>
 </div>
 </body>

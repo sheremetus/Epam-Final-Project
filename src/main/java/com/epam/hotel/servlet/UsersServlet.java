@@ -14,7 +14,7 @@ import java.io.PrintWriter;
 import java.sql.*;
 
 
-public class TestServlet extends HttpServlet {
+public class UsersServlet extends HttpServlet {
 
     public void init(ServletConfig servletConfig) {
         try {
@@ -35,15 +35,14 @@ public class TestServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter pw = response.getWriter();
 
-        String login = request.getParameter("login");
-        String password = request.getParameter("password");
+        String login = request.getParameter("login-up");
+        String password = request.getParameter("password-up");
 
         try {
             SQLUserDao sqlUserDao = new SQLUserDao();
 
-            User user = sqlUserDao.authorization(login, password);
+            sqlUserDao.authorization(login, password);
             response.sendRedirect("/users");
-            pw.println(user);
         } catch (DAOException e) {
             e.printStackTrace();
         }
