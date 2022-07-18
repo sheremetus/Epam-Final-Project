@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: kirja
@@ -6,6 +7,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%@page isELIgnored="false" %>
 <html>
 <head>
     <title>Выбор комнаты</title>
@@ -16,7 +19,7 @@
 <body>
 <h2>Выберите и забронируйте комнату</h2>
 
-<p><a href=""><img src="images/sample.gif" width="50"
-                              height="50" alt="Пример"></a></p>
+<img src="${pageContext.request.contextPath}${"/img/rooms/DoubleRoomWithoutBalcony/Main.jpg"}" />
+
 </body>
 </html>
