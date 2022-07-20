@@ -22,7 +22,7 @@
             <ul>
                 <li><a href="#">Главная</a></li>
                 <li><a href="#">Личный кабинет</a></li>
-                <li><a href="jsp/bookingRoom.jsp">Заказать комнату</a></li>
+                <li><a href="/bookingRoom">Заказать комнату</a></li>
                 <li><a href="#">Оплата проживания</a></li>
                 <li><a href="#">Контакты</a></li>
             </ul>

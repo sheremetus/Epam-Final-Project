@@ -12,3 +12,14 @@ p{
     margin-top: 20px;
 }
 
+img {
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.img-scale {
+    transition: 1s; /* Время эффекта */
+}
+.img-scale:hover {
+    transform: scale(1.2); /* Увеличиваем масштаб */
+}

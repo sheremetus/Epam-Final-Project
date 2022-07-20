@@ -4,6 +4,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+
     <filter>
         <filter-name>CharsetFilter</filter-name>
         <filter-class>com.epam.hotel.filter.CharsetFilter</filter-class>
@@ -62,5 +63,19 @@
         <url-pattern>*.png</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>bookingRoom</servlet-name>
+        <jsp-file>/jsp/bookingRoom.jsp</jsp-file>
+        <init-param>
+            <param-name>mappedfile</param-name>
+            <param-value>false</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>bookingRoom</servlet-name>
+        <url-pattern>/bookingRoom</url-pattern>
+    </servlet-mapping>
 
 </web-app>
+
+
