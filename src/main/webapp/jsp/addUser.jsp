@@ -19,14 +19,17 @@
 <body>
 <div>
     <h1>Please sign in or sign up!</h1>
-    <form method="post" action="/users" class="subform">
+    <form method="post" action="/session" class="subform">
+
+        <input type="hidden"  name="command" value="registration"/>
+
         <p>
             <label for="login-up">Login</label>
-            <input class="input-field" type="text" id="login-up" name="login-up"/>
+            <input class="input-field" type="text" id="login-up" name="login"/>
         </p>
         <p>
             <label for="password-up">Password</label>
-            <input class="input-field" type="text" id="password-up" name="password-up"/>
+            <input class="input-field" type="text" id="password-up" name="password"/>
         </p>
         <input type="submit" value="Sign up" />
     </form>
@@ -35,17 +38,16 @@
 
 
     <form method="post" action="/session" class="subform">
+
+
+            <input type="hidden"  name="command" value="authorization"/>
         <p>
-            <label for="password-in">Password</label>
-            <input type="hidden"  name="command", value="authorization"/>
+            <label for="login">Login</label>
+            <input class="input-field" type="text" id="login" name="login"/>
         </p>
         <p>
-            <label for="login-in">Login</label>
-            <input class="input-field" type="text" id="login-in" name="login-in"/>
-        </p>
-        <p>
-            <label for="password-in">Password</label>
-            <input class="input-field" type="text" id="password-in" name="password-in"/>
+            <label for="password">Password</label>
+            <input class="input-field" type="text" id="password" name="password"/>
         </p>
 
         <input type="submit" value="Sign in"/>

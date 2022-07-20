@@ -16,7 +16,7 @@ public class SQLUserDao implements UserDao {
     ResultSet rs = null;
 
     @Override
-    public void authorization(String login, String password) throws DAOException {
+    public void registration(String login, String password) throws DAOException {
 
 
         try {

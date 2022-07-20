@@ -2,6 +2,7 @@ package com.epam.hotel.command;
 
 import com.epam.hotel.command.commandImpl.AuthorizationCommand;
 import com.epam.hotel.command.commandImpl.NoSuchCommand;
+import com.epam.hotel.command.commandImpl.RegistrationCommand;
 
 import java.util.HashMap;
 import java.util.Locale;
@@ -17,7 +18,7 @@ public class CommandProvider {
 //приватный так как это синглтон
   private CommandProvider() {
         commands.put(CommandName.AUTHORIZATION, new AuthorizationCommand());
-        commands.put(CommandName.REGISTRATION, new AuthorizationCommand());
+        commands.put(CommandName.REGISTRATION, new RegistrationCommand());
         commands.put(CommandName.NO_SUCH_COMMAND, new NoSuchCommand());
     }
 

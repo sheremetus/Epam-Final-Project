@@ -27,15 +27,7 @@
         </jsp-property-group>
     </jsp-config>
 
-    <servlet>
-        <servlet-name>TestServlet</servlet-name>
-        <servlet-class>com.epam.hotel.servlet.UsersServlet</servlet-class>
-    </servlet>
 
-    <servlet-mapping>
-        <servlet-name>TestServlet</servlet-name>
-        <url-pattern>/users</url-pattern>
-    </servlet-mapping>
 
     <servlet>
         <servlet-name>addUser</servlet-name>
