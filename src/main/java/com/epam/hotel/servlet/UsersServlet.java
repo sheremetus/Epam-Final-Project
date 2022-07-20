@@ -33,7 +33,6 @@ public class UsersServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        PrintWriter pw = response.getWriter();
 
         String login = request.getParameter("login-up");
         String password = request.getParameter("password-up");

@@ -36,6 +36,10 @@
 
     <form method="post" action="/session" class="subform">
         <p>
+            <label for="password-in">Password</label>
+            <input type="hidden"  name="command", value="authorization"/>
+        </p>
+        <p>
             <label for="login-in">Login</label>
             <input class="input-field" type="text" id="login-in" name="login-in"/>
         </p>
