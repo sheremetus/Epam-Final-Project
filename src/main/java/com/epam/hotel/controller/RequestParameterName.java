@@ -1,4 +1,4 @@
-package com.epam.hotel.servlet;
+package com.epam.hotel.controller;
 
 // Этот класс будет содержать константные имена
 //

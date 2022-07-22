@@ -1,15 +1,12 @@
-package com.epam.hotel.servlet;
+package com.epam.hotel.controller;
 
-import com.epam.hotel.bean.User;
 import com.epam.hotel.command.Command;
 import com.epam.hotel.command.CommandProvider;
-import com.epam.hotel.dao.SQLUserDao;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet(name = "SessionServlet", value = "/session")
 public class SessionController extends HttpServlet {
