@@ -41,7 +41,7 @@ public class SQLUserDao implements UserDao {
     }
 
     @Override
-    public User getUser(int id) {
+    public User getUser(int id)  {
         User user = null;
         try {
             cp.initPoolData();

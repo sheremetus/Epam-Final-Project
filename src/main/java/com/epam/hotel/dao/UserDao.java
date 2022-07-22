@@ -5,8 +5,8 @@ import com.epam.hotel.bean.User;
 public interface UserDao extends CrudDao<User> {
     void registration(String login, String password) throws DAOException;
 
-    User getUser(int id);
+    User getUser(int id) throws DAOException;
 
-    User getUser(String login, String password);
+    User getUser(String login, String password) throws DAOException;
 
 }

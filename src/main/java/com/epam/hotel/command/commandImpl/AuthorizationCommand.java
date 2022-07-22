@@ -2,7 +2,11 @@ package com.epam.hotel.command.commandImpl;
 
 import com.epam.hotel.bean.User;
 import com.epam.hotel.command.Command;
+import com.epam.hotel.controller.RequestParameterName;
 import com.epam.hotel.dao.SQLUserDao;
+import com.epam.hotel.service.ServiceException;
+import com.epam.hotel.service.ServiceProvider;
+import com.epam.hotel.service.UserService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -17,17 +21,31 @@ public class AuthorizationCommand implements Command {
     public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
         PrintWriter pw = response.getWriter();
-        String login = request.getParameter("login");
-        String password = request.getParameter("password");
+        String login = request.getParameter(RequestParameterName.REQ_PARAM_LOGIN);
+        String password = request.getParameter(RequestParameterName.REQ_PARAM_PASSWORD);
+
+        UserService userService = ServiceProvider.getInstance().getUserService();
         User user;
-        if ( (user = sqlUserDao.getUser(login, password)) != null) {
-            request.setAttribute("Login", login);
-            request.getServletContext().getRequestDispatcher("/jsp/guestSession.jsp").forward(request,response);
+
+        try {
+            user = userService.authorization(login, password);
+
+            if ( user != null) {
+
+                request.getServletContext().getRequestDispatcher("/jsp/guestSession.jsp").forward(request,response);
 
 
+            }
+            else{
+                pw.println("Please register!");
+            }
+
+
+
+        }catch (ServiceException e){
+
         }
-        else{
-            pw.println("Please register!");
-        }
+
+
     }
 }
