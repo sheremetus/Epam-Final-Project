@@ -15,8 +15,9 @@ public class CommandProvider {
 
     //
     private Map<CommandName, Command> commands = new HashMap<>();
-//приватный так как это синглтон
-  private CommandProvider() {
+
+    //приватный так как это синглтон
+    private CommandProvider() {
         commands.put(CommandName.AUTHORIZATION, new AuthorizationCommand());
         commands.put(CommandName.REGISTRATION, new RegistrationCommand());
         commands.put(CommandName.NO_SUCH_COMMAND, new NoSuchCommand());
@@ -30,7 +31,7 @@ public class CommandProvider {
     public Command getCommand(String commandName) {
         CommandName name = CommandName.valueOf(commandName.toUpperCase());
         Command command;
-        // так пишем только для привлечения внимания на null
+        // так пишем только для привлечения внимания на null (имеется в виду что сначала null)
         if (null != name) {
             command = commands.get(name);
         } else {

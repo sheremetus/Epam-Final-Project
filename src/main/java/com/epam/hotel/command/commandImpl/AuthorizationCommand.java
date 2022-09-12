@@ -2,6 +2,7 @@ package com.epam.hotel.command.commandImpl;
 
 import com.epam.hotel.bean.User;
 import com.epam.hotel.command.Command;
+import com.epam.hotel.controller.JSPPageName;
 import com.epam.hotel.controller.RequestParameterName;
 import com.epam.hotel.dao.SQLUserDao;
 import com.epam.hotel.service.ServiceException;
@@ -31,8 +32,9 @@ public class AuthorizationCommand implements Command {
             user = userService.authorization(login, password);
 
             if ( user != null) {
+                request.setAttribute("user",user );
 
-                request.getServletContext().getRequestDispatcher("/jsp/guestSession.jsp").forward(request,response);
+                request.getServletContext().getRequestDispatcher(JSPPageName.USER_AUTH_PAGE).forward(request,response);
 
 
             }

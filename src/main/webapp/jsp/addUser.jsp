@@ -12,7 +12,7 @@
 <head>
     <title>Title</title>
     <style>
-        <%@include file='/css/registration.css' %>
+<%--        <%@include file='/css/registration.css' %>--%>
     </style>
 </head>
 
