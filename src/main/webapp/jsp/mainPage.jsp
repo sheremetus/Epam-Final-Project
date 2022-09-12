@@ -1,4 +1,5 @@
-<%--
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="com.epam.hotel.bean.User" %><%--
   Created by IntelliJ IDEA.
   User: kirja
   Date: 01.09.2022
@@ -40,6 +41,10 @@
         </nav>
     </div>
 </header>
+
+
+        <c:out value="${requestScope.user}" />
+
 
 
 <%--Подключаем jQuery--%>

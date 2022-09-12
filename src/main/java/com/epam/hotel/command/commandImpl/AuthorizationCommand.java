@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class AuthorizationCommand implements Command {
-   private SQLUserDao sqlUserDao = new SQLUserDao();
+    private SQLUserDao sqlUserDao = new SQLUserDao();
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -24,27 +24,30 @@ public class AuthorizationCommand implements Command {
         PrintWriter pw = response.getWriter();
         String login = request.getParameter(RequestParameterName.REQ_PARAM_LOGIN);
         String password = request.getParameter(RequestParameterName.REQ_PARAM_PASSWORD);
+        String role = request.getParameter(RequestParameterName.REQ_PARAM_ROLE);
 
         UserService userService = ServiceProvider.getInstance().getUserService();
         User user;
 
         try {
-            user = userService.authorization(login, password);
-
-            if ( user != null) {
-                request.setAttribute("user",user );
-
-                request.getServletContext().getRequestDispatcher(JSPPageName.USER_AUTH_PAGE).forward(request,response);
-
-
+            if (role == null) {
+                user = userService.authorization(login, password, 1);
+            } else {
+                user = userService.authorization(login, password, 2);
             }
-            else{
+
+            if (user != null) {
+                request.setAttribute("user", user);
+
+                request.getServletContext().getRequestDispatcher(JSPPageName.USER_AUTH_PAGE).forward(request, response);
+
+
+            } else {
                 pw.println("Please register!");
             }
 
 
-
-        }catch (ServiceException e){
+        } catch (ServiceException e) {
 
         }
 

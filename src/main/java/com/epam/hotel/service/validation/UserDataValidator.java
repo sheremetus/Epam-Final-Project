@@ -7,7 +7,7 @@ public class UserDataValidator {
     private UserDataValidator(){}
 
 
-    public boolean check(String login, String password){
+    public boolean check(String login, String password, int role){
         return true;
     }
 

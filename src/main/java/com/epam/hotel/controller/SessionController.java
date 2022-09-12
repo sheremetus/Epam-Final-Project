@@ -24,7 +24,6 @@ public class SessionController extends HttpServlet {
         String commandName;
         Command command;
 
-
         commandName =request.getParameter(RequestParameterName.REQ_PARAM_COMMAND_NAME);
         command = provider.getCommand(commandName);
 

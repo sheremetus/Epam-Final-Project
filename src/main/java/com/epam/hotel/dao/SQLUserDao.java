@@ -65,18 +65,19 @@ public class SQLUserDao implements UserDao {
     }
 
     @Override
-    public User getUser(String login, String password) {
+    public User getUser(String login, String password ,int role) {
         User user = null;
         try {
             cp.initPoolData();
             con = cp.takeConnection();
-            st = con.prepareStatement("SELECT * FROM hotel_db.users WHERE login = ? AND password= ?");
+            st = con.prepareStatement("SELECT * FROM hotel_db.users WHERE login = ? AND password= ? AND roles_id= ?");
             st.setString(1, login);
             st.setString(2, password);
+            st.setInt(3, role);
 
             ResultSet rs = st.executeQuery();
             while(rs.next()) {
-                user = new User(rs.getString(2), rs.getString(3));
+                user = new User(rs.getString(2), rs.getString(3), rs.getInt(4));
             }
         } catch (SQLException throwable) {
             throwable.printStackTrace();

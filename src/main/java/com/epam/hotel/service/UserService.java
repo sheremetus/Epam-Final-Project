@@ -4,6 +4,6 @@ import com.epam.hotel.bean.User;
 
 public interface UserService {
 
-    User authorization(String login, String password) throws ServiceException;
+    User authorization(String login, String password, int role) throws ServiceException;
 
 }

@@ -7,6 +7,6 @@ public interface UserDao extends CrudDao<User> {
 
     User getUser(int id) throws DAOException;
 
-    User getUser(String login, String password) throws DAOException;
+    User getUser(String login, String password, int role) throws DAOException;
 
 }

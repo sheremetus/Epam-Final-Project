@@ -11,16 +11,16 @@ public class UserServiceImpl implements UserService {
     private static final UserDataValidator validator = UserDataValidator.getInstance();
 
     @Override
-    public User authorization(String login, String password) throws ServiceException {
+    public User authorization(String login, String password, int role) throws ServiceException {
 
-        if(!validator.check(login, password)){
+        if(!validator.check(login, password, role)){
          throw new ServiceException("User Service Exception!");
         }
         UserDao userDao = DaoProvider.getInstance().getUserDao();
 
         User user;
         try {
-            user = userDao.getUser(login, password);
+            user = userDao.getUser(login, password, role);
         }catch (DAOException e){
             throw  new ServiceException(e);
         }
