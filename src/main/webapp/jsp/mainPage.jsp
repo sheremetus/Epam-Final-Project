@@ -33,7 +33,7 @@
             </label>
             <ul class="main-menu">
                 <li><a href="mainPage.jsp">HOME</a></li>
-                <li><a href="information.jsp">OUR HOTEL</a></li>
+                <li><a href="account.jsp">PERSONAL ACCOUNT </a></li>
                 <li><a href="booking.jsp">ROOMS</a></li>
                 <li><a href="entertainment.jsp">EAT,DRINK & DANCE</a></li>
                 <li><a href="contact.jsp">CONTACT US</a></li>
@@ -43,8 +43,7 @@
 </header>
 
 
-        <c:out value="${requestScope.user}" />
-
+<c:out value="${requestScope.user.login}"/>
 
 
 <%--Подключаем jQuery--%>

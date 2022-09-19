@@ -54,6 +54,10 @@
         <label for="admin" class="text"> Я являюсь администратором </label>
 
         <input type="submit" value="Sign in"/>
+<%--      Делаем проверку  на совпадение пароля--%>
+        <c:if  test="${requestScope.user eq 'noSuchUser'}">
+            <c:out value="Введен неправильный логин или пароль!"/>
+        </c:if>
     </form>
 </div>
 </body>

@@ -43,7 +43,9 @@ public class AuthorizationCommand implements Command {
 
 
             } else {
-                pw.println("Please register!");
+                request.setAttribute("user", "noSuchUser");
+                request.getRequestDispatcher(JSPPageName.REGISTRATION_FIELDS).forward(request, response);
+
             }
 
 

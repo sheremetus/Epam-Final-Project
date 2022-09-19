@@ -56,17 +56,18 @@
     </servlet-mapping>
 
 
+
     <servlet>
-        <servlet-name>Main</servlet-name>
-        <jsp-file>/jsp/Main.jsp</jsp-file>
+        <servlet-name>Account</servlet-name>
+        <jsp-file>/jsp/account.jsp</jsp-file>
         <init-param>
             <param-name>mappedfile</param-name>
             <param-value>false</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>
-        <servlet-name>Main</servlet-name>
-        <url-pattern>/Session</url-pattern>
+        <servlet-name>Account</servlet-name>
+        <url-pattern>/Account</url-pattern>
     </servlet-mapping>
 
 
