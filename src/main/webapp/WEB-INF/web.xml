@@ -57,22 +57,6 @@
 
 
 
-    <servlet>
-        <servlet-name>Account</servlet-name>
-        <jsp-file>/jsp/account.jsp</jsp-file>
-        <init-param>
-            <param-name>mappedfile</param-name>
-            <param-value>false</param-value>
-        </init-param>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Account</servlet-name>
-        <url-pattern>/Account</url-pattern>
-    </servlet-mapping>
-
-
-
-
 
 </web-app>
 

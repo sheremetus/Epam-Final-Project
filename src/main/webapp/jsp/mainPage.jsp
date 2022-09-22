@@ -32,11 +32,11 @@
                    data-open="Menu" data-close="Close onclick">
             </label>
             <ul class="main-menu">
-                <li><a href="mainPage.jsp">HOME</a></li>
-                <li><a href="account.jsp">PERSONAL ACCOUNT </a></li>
-                <li><a href="booking.jsp">ROOMS</a></li>
-                <li><a href="entertainment.jsp">EAT,DRINK & DANCE</a></li>
-                <li><a href="contact.jsp">CONTACT US</a></li>
+                <li><a href="jsp/mainPage.jsp">HOME</a></li>
+                <li><a href="jsp/account.jsp">PERSONAL ACCOUNT </a></li>
+                <li><a href="jsp/booking.jsp">ROOMS</a></li>
+                <li><a href="jsp/entertainment.jsp">EAT,DRINK & DANCE</a></li>
+                <li><a href="jsp/contact.jsp">CONTACT US</a></li>
             </ul>
         </nav>
     </div>
