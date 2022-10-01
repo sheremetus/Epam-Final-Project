@@ -44,7 +44,7 @@
 <form method="post" action="/session" class="subform">
 
     <input type="hidden" name="command" value="info_about_guest"/>
-
+    <input type="hidden" name="user_id" value="${requestScope.user.id}"/>
     <p>
         <label for="name">Name</label>
         <input class="input-field" type="text" id="name" name="name"/>

@@ -1,9 +1,11 @@
-package com.epam.hotel.service;
+package com.epam.hotel.service.serviceImpl;
 
 import com.epam.hotel.bean.User;
 import com.epam.hotel.dao.DAOException;
 import com.epam.hotel.dao.DaoProvider;
 import com.epam.hotel.dao.UserDao;
+import com.epam.hotel.service.ServiceException;
+import com.epam.hotel.service.UserService;
 import com.epam.hotel.service.validation.UserDataValidator;
 
 public class UserServiceImpl implements UserService {

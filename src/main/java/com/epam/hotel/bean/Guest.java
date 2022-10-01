@@ -26,10 +26,11 @@ public class Guest implements Serializable {
         this.id = id;
     }
 
-    public Guest(int id, String name, String surname) {
-        this.id = id;
+    public Guest(String name, String surname, int user_id) {
+
         this.name = name;
         this.surname = surname;
+        this.user_id = user_id;
     }
 
     public int getId() {

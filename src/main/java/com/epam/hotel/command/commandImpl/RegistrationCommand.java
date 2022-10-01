@@ -3,7 +3,7 @@ package com.epam.hotel.command.commandImpl;
 import com.epam.hotel.command.Command;
 import com.epam.hotel.controller.JSPPageName;
 import com.epam.hotel.dao.DAOException;
-import com.epam.hotel.dao.SQLUserDao;
+import com.epam.hotel.dao.SQLDao.SQLUserDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

@@ -1,6 +1,8 @@
-package com.epam.hotel.dao;
+package com.epam.hotel.dao.SQLDao;
 
 import com.epam.hotel.bean.User;
+import com.epam.hotel.dao.DAOException;
+import com.epam.hotel.dao.UserDao;
 import com.epam.hotel.pool.ConnectionPool;
 import com.epam.hotel.pool.ConnectionPoolException;
 
@@ -12,8 +14,6 @@ public class SQLUserDao implements UserDao {
     private final ConnectionPool cp = new ConnectionPool();
     Connection con = null;
     PreparedStatement st = null;
-
-    ResultSet rs = null;
 
     @Override
     public void registration(String login, String password) throws DAOException {
@@ -77,7 +77,7 @@ public class SQLUserDao implements UserDao {
 
             ResultSet rs = st.executeQuery();
             while(rs.next()) {
-                user = new User(rs.getString(2), rs.getString(3), rs.getInt(4));
+                user = new User(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getInt(4));
             }
         } catch (SQLException throwable) {
             throwable.printStackTrace();

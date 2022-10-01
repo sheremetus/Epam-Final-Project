@@ -19,6 +19,18 @@ public class User implements Serializable {
         this.role = role;
     }
 
+    public User(int id, String login, String password, int role) {
+        this.login = login;
+        this.password = password;
+        this.id = id;
+        if (role == 2) {
+            this.role = new Role(2,"administrator");
+        }
+        else{
+            this.role = new Role(1,"guest");
+        }
+    }
+
     public User(String login, String password, int role) {
         this.login = login;
         this.password = password;
@@ -74,6 +86,14 @@ public class User implements Serializable {
         this.role = role;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -89,6 +109,7 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return User.class.getName() + " {" + "login='" + login + '\'' + ", password='" + password + '\'' + ", role=" + role + '}';
+        return User.class.getName() + " {" + "login='" + login + '\'' + ", password='" + password + '\'' + ", role=" + role +
+                ",id= " + id + '}';
     }
 }

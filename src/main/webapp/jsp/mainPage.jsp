@@ -43,7 +43,25 @@
 </header>
 
 
-<c:out value="${requestScope.user.login}"/>
+<c:out value="${requestScope.user.id}"/>
+
+<h3>Please fill in information about yourself</h3>
+<form method="post" action="/session" class="subform">
+
+    <input type="hidden" name="command" value="info_about_guest"/>
+    <input type="hidden" name="user_id" value="${requestScope.user.id}"/>
+    <p>
+        <label for="name">Name</label>
+        <input class="input-field" type="text" id="name" name="name"/>
+    </p>
+    <br><br><br>
+    <p>
+        <label for="surname">Surname</label>
+        <input class="input-field" type="text" id="surname" name="surname"/>
+    </p>
+    <br>
+    <input type="submit" value="Refresh"/>
+</form>
 
 
 <%--Подключаем jQuery--%>

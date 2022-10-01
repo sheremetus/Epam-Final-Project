@@ -1,6 +1,7 @@
 package com.epam.hotel.command;
 
 import com.epam.hotel.command.commandImpl.AuthorizationCommand;
+import com.epam.hotel.command.commandImpl.GuestInfoCommand;
 import com.epam.hotel.command.commandImpl.NoSuchCommand;
 import com.epam.hotel.command.commandImpl.RegistrationCommand;
 
@@ -21,6 +22,7 @@ public class CommandProvider {
         commands.put(CommandName.AUTHORIZATION, new AuthorizationCommand());
         commands.put(CommandName.REGISTRATION, new RegistrationCommand());
         commands.put(CommandName.NO_SUCH_COMMAND, new NoSuchCommand());
+        commands.put(CommandName.INFO_ABOUT_GUEST, new GuestInfoCommand());
     }
 
     public static CommandProvider getInstance() {
