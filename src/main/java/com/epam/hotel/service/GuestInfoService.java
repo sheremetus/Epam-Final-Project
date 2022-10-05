@@ -4,4 +4,6 @@ import com.epam.hotel.bean.Guest;
 
 public interface GuestInfoService {
     void updateInfo(String name, String surname,int user_id) throws ServiceException;
+
+    Guest find(int id);
 }

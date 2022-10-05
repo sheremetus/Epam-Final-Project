@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: kirja
@@ -9,8 +10,47 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        <%@include file='/css/mainPage.css' %>
+    </style>
 </head>
 <body>
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <img src="img/logo.png" alt="logo">
+        </div>
+        <input type="checkbox" id="menu-checkbox">
+        <%--        Тег< nav> предназначен для обозначения основной навигации по сайту.--%>
+        <%--        Как правило, этим главное меню, которое является сквозным для всего сайта--%>
+        <%--        аттрибут role наиболее четко показывает синтаксическое применение элемента --%>
+        <nav role="navigation">
+            <label for="menu-checkbox" class="toggle-button"
+                   data-open="Menu" data-close="Close onclick">
+            </label>
+            <ul class="main-menu">
+                <c:url value="/jsp/account.jsp" var="account">
+                </c:url>
 
+                <c:url value="/jsp/booking.jsp" var="booking">
+                </c:url>
+
+                <c:url value="/jsp/contact.jsp" var="contact">
+                </c:url>
+
+                <c:url value="/jsp/entertainment.jsp" var="entertainment">
+                </c:url>
+                <c:url value="/jsp/mainPage.jsp" var="main">
+                </c:url>
+
+                <li><a href="<c:out value="${main}"/>">HOME</a></li>
+                <li><a href="<c:out value="${account}"/>">PERSONAL ACCOUNT </a></li>
+                <li><a href="<c:out value="${booking}"/>">ROOMS</a></li>
+                <li><a href="<c:out value="${entertainment}"/>">EAT,DRINK & DANCE</a></li>
+                <li><a href="<c:out value="${contact}"/>">CONTACT US</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 </body>
 </html>

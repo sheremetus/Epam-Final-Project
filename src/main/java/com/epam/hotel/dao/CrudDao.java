@@ -1,10 +1,12 @@
 package com.epam.hotel.dao;
 
+import com.epam.hotel.pool.ConnectionPoolException;
+
 import java.util.List;
 import java.util.Optional;
 
 public interface CrudDao<T> {
-    Optional<T> find(Integer id);
+    T find(Integer id) throws ConnectionPoolException;
 
     void save(T model);
 

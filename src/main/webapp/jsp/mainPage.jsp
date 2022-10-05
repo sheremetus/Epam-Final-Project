@@ -32,32 +32,50 @@
                    data-open="Menu" data-close="Close onclick">
             </label>
             <ul class="main-menu">
-                <li><a href="jsp/mainPage.jsp">HOME</a></li>
-                <li><a href="jsp/account.jsp">PERSONAL ACCOUNT </a></li>
-                <li><a href="jsp/booking.jsp">ROOMS</a></li>
-                <li><a href="jsp/entertainment.jsp">EAT,DRINK & DANCE</a></li>
-                <li><a href="jsp/contact.jsp">CONTACT US</a></li>
+                <c:url value="/jsp/account.jsp" var="account">
+                </c:url>
+
+                <c:url value="/jsp/booking.jsp" var="booking">
+                </c:url>
+                <c:url value="/jsp/contact.jsp" var="contact">
+                </c:url>
+                <c:url value="/jsp/entertainment.jsp" var="entertainment">
+                </c:url>
+                <c:url value="/jsp/mainPage.jsp" var="main">
+                </c:url>
+
+                <li><a href="<c:out value="${main}"/>">HOME</a></li>
+                <li><a href="<c:out value="${account}"/>">PERSONAL ACCOUNT </a></li>
+                <li><a href="<c:out value="${booking}"/>">ROOMS</a></li>
+                <li><a href="<c:out value="${entertainment}"/>">EAT,DRINK & DANCE</a></li>
+                <li><a href="<c:out value="${contact}"/>">CONTACT US</a></li>
             </ul>
         </nav>
     </div>
 </header>
 
 
-<c:out value="${requestScope.user.id}"/>
+<c:out value="${sessionScope.guest.name}"/>
+<br>
+<br>
+<br>
+<c:out value="${sessionScope.guest.surname}"/>
+
 
 <h3>Please fill in information about yourself</h3>
 <form method="post" action="/session" class="subform">
 
     <input type="hidden" name="command" value="info_about_guest"/>
-    <input type="hidden" name="user_id" value="${requestScope.user.id}"/>
+    <input type="hidden" name="user_id" value="${sessionScope.user.id}"/>
+
     <p>
         <label for="name">Name</label>
-        <input class="input-field" type="text" id="name" name="name"/>
+        <input class="input-field" type="text" id="name" name="name" placeholder="${sessionScope.guest.name}"/>
     </p>
     <br><br><br>
     <p>
         <label for="surname">Surname</label>
-        <input class="input-field" type="text" id="surname" name="surname"/>
+        <input class="input-field" type="text" id="surname" name="surname" placeholder="${sessionScope.guest.surname}"/>
     </p>
     <br>
     <input type="submit" value="Refresh"/>

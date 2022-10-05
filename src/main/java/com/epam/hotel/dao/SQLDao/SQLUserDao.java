@@ -77,7 +77,11 @@ public class SQLUserDao implements UserDao {
 
             ResultSet rs = st.executeQuery();
             while(rs.next()) {
-                user = new User(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getInt(4));
+                user = new User(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getInt(4));
             }
         } catch (SQLException throwable) {
             throwable.printStackTrace();
@@ -92,8 +96,8 @@ public class SQLUserDao implements UserDao {
 
 
     @Override
-    public Optional find(Integer id) {
-        return Optional.empty();
+    public User find(Integer id) {
+        return null;
     }
 
     @Override

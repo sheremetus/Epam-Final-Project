@@ -1,12 +1,14 @@
 package com.epam.hotel.dao.SQLDao;
 
 import com.epam.hotel.bean.Guest;
+import com.epam.hotel.bean.User;
 import com.epam.hotel.dao.GuestInfoDao;
 import com.epam.hotel.pool.ConnectionPool;
 import com.epam.hotel.pool.ConnectionPoolException;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
@@ -19,8 +21,32 @@ public class SQLGuestInfoDao implements GuestInfoDao {
 
 
     @Override
-    public Optional<Guest> find(Integer id) {
-        return Optional.empty();
+    public Guest find(Integer id) {
+        Guest guest = null;
+        try {
+            cp.initPoolData();
+            con = cp.takeConnection();
+            st = con.prepareStatement("SELECT * FROM hotel_db.guests WHERE users_id = ? ");
+            st.setInt(1, id);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+
+                guest = new Guest(
+                        rs.getString(1),
+                        rs.getString(2),
+                        rs.getInt(3),
+                        rs.getInt(4)
+                );
+            }
+
+        } catch (ConnectionPoolException | SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        return guest;
+
+
     }
 
     @Override
