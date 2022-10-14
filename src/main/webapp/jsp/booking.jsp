@@ -12,6 +12,7 @@
     <title>Booking</title>
     <style>
         <%@include file='/css/mainPage.css' %>
+        <%@include file='/css/booking.css' %>
     </style>
 
 </head>
@@ -19,7 +20,7 @@
 <header>
     <div class="header-container">
         <div class="logo">
-            <img src="img/logo.png" alt="logo">
+            <img src="/img/logo.png" alt="logo">
         </div>
         <input type="checkbox" id="menu-checkbox">
         <%--        Тег< nav> предназначен для обозначения основной навигации по сайту.--%>
@@ -31,27 +32,18 @@
             </label>
             <ul class="main-menu">
                 <c:url value="/jsp/account.jsp" var="account">
-                    <c:param name="name" value="${requestScope.guest.name}"/>
-                    <c:param name="surname" value="${requestScope.guest.surname}"/>
                 </c:url>
 
                 <c:url value="/jsp/booking.jsp" var="booking">
-                    <c:param name="name" value="${requestScope.guest.name}"/>
-                    <c:param name="surname" value="${requestScope.guest.surname}"/>
                 </c:url>
 
                 <c:url value="/jsp/contact.jsp" var="contact">
-                    <c:param name="name" value="${requestScope.guest.name}"/>
-                    <c:param name="surname" value="${requestScope.guest.surname}"/>
                 </c:url>
 
                 <c:url value="/jsp/entertainment.jsp" var="entertainment">
-                    <c:param name="name" value="${requestScope.guest.name}"/>
-                    <c:param name="surname" value="${requestScope.guest.surname}"/>
                 </c:url>
+
                 <c:url value="/jsp/mainPage.jsp" var="main">
-                    <c:param name="name" value="${requestScope.guest.name}"/>
-                    <c:param name="surname" value="${requestScope.guest.surname}"/>
                 </c:url>
 
                 <li><a href="<c:out value="${main}"/>">HOME</a></li>
@@ -63,5 +55,33 @@
         </nav>
     </div>
 </header>
+
+<ul class="products clearfix">
+    <li class="product-wrapper">
+        <a href="" class="product">
+            <div class="product-photo">
+                <img src="/img/rooms/1.jpg" alt="">
+            </div>
+        </a>
+
+    </li>
+    <li class="product-wrapper">
+        <a href="" class="product">
+            <div class="product-photo">
+                <img src="/img/rooms/2.jpg" alt="">
+            </div>
+        </a>
+
+    </li>
+    <li class="product-wrapper">
+        <a href="" class="product">
+            <div class="product-photo">
+                <img src="/img/rooms/lux.jpg" alt="">
+            </div>
+            <p>Описание товара орпапролфываыаы ва фыа фв аф ф с ы сафв м вчсаф воаыовмовлмииолвсоиваиовиощв</p>
+        </a>
+
+    </li>
+</ul>
 </body>
 </html>

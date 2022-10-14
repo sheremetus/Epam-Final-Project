@@ -18,7 +18,7 @@
 <header>
     <div class="header-container">
         <div class="logo">
-            <img src="img/logo.png" alt="logo">
+            <img src="/img/logo.png" alt="logo">
         </div>
         <input type="checkbox" id="menu-checkbox">
         <%--        Тег< nav> предназначен для обозначения основной навигации по сайту.--%>
